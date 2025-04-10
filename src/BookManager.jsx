@@ -12,7 +12,7 @@ export default function BookManager() {
   }, []);
 
   const fetchBooks = async () => {
-    const response = await fetch("http://localhost:7272/api/v1/book");
+    const response = await fetch("https://ck.myddns.me/api/v1/book");
     if (response.ok) {
       const data = await response.json();
       setBooks(data);
@@ -22,7 +22,7 @@ export default function BookManager() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     
-    const response = await fetch("http://localhost:7272/api/v1/book/create", {
+    const response = await fetch("https://ck.myddns.me/api/v1/book/create", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name, mota })
